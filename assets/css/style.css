@@ -45,6 +45,14 @@ body{
     background-color: purple;
 }
 
+.block{
+    display: block;
+}
+
+.width-100{
+    width: 100%;
+}
+
 /*Main*/
 .cell{
     border: 2px white solid;
