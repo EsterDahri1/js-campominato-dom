@@ -25,82 +25,37 @@ console.log(select, easyGame, normalGame, hardGame);
 const playButton = document.querySelector('.generate');
 
 //metto condizione se scelgo questo allora genero diversa grandezza gioco
-if (easyGame) {
-    //Aggiungo eventlistener al bottone per farlo funzionare
-    playButton.addEventListener('click', function () {
+
+//Aggiungo eventlistener al bottone per farlo funzionare
+playButton.addEventListener('click', function () {
 
 
-        //Creo la griglia 10x10
-        for (let i = 1; i <= 100; i++) {
-            //creo il perimetro
-            const createCell = document.createElement('div');
-            //metto i numeri nelle celle
-            createCell.append(i);
-            //creo la cella
-            createCell.className = 'cell';
-            //collego il div al contenitore
-            document.querySelector('.container').append(createCell);
+    //Creo la griglia 10x10
+    for (let i = 1; i <= 100; i++) {
+        //creo il perimetro
+        const createCell = document.createElement('div');
+        //metto i numeri nelle celle
+        createCell.append(i);
+        //creo la cella
+        createCell.className = 'cell';
+        //collego il div al contenitore
+        document.querySelector('.container').append(createCell);
 
 
-            createCell.addEventListener('click', function () {
-                //console.log('Type on cell');
-                this.classList.toggle('bg-purple')
-                console.log(i);
-            })
-        }
-    })
-} else if (normalGame) {
-    playButton.addEventListener('click', function () {
+        createCell.addEventListener('click', function () {
+            //console.log('Type on cell');
+            this.classList.toggle('bg-purple')
+            console.log(i);
+        })
+    }
+})
 
 
-        //Creo la griglia 9x9
-        for (let i = 1; i <= 81; i++) {
-            //creo il perimetro
-            const createCell = document.createElement('div');
-            //metto i numeri nelle celle
-            createCell.append(i);
-            //creo la cella
-            createCell.className = 'cell';
-            //collego il div al contenitore
-            document.querySelector('.container').append(createCell);
 
-
-            createCell.addEventListener('click', function () {
-                //console.log('Type on cell');
-                this.classList.toggle('bg-purple')
-                console.log(i);
-            })
-        }
-    })
-} else { //hardGame
-    playButton.addEventListener('click', function () {
-
-
-        //Creo la griglia 7x7
-        for (let i = 1; i <= 49; i++) {
-            //creo il perimetro
-            const createCell = document.createElement('div');
-            //metto i numeri nelle celle
-            createCell.append(i);
-            //creo la cella
-            createCell.className = 'cell';
-            //collego il div al contenitore
-            document.querySelector('.container').append(createCell);
-
-
-            createCell.addEventListener('click', function () {
-                //console.log('Type on cell');
-                this.classList.toggle('bg-purple')
-                console.log(i);
-            })
-        }
-    })
+//funzione per i 16 numeri a caso delle bombe
+function randomBomb(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-
-
-
-
    
 
 
