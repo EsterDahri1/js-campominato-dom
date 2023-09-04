@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: palevioletred ;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 30px auto;
+    width: 80%;
+}
+
+/*Utilities*/
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.d-none{
+    display: none;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.mt-2{
+    margin-top: 2rem;
+}
+
+.ml-2{
+    margin-left: 2rem;
+}
+
+.p-05{
+    padding: 0.5rem;
+}
+
+.bg-purple{
+    background-color: purple;
+}
+
+/*Main*/
+.cell{
+    border: 2px white solid;
+    width: calc(100%/10);
+    aspect-ratio: 1 / 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
