@@ -21,6 +21,12 @@ const normalGame = document.getElementById('normal');
 const hardGame = document.getElementById('hard');
 console.log(select, easyGame, normalGame, hardGame);
 
+//dichiaro le bombe presenti
+const numberBombs = 16 
+const bombs = addBombs();
+console.log(bombs);
+
+
 //Metto in variabile il bottone
 const playButton = document.querySelector('.generate');
 
@@ -57,6 +63,18 @@ function randomBomb(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
    
+//funzione per aggiungere le bombe
+function addBombs(){
+    const arrayBombs = [];
+    console.log(numberBombs);
+    
+    while(arrayBombs.length < numberBombs){
+        const bomb = randomBomb();
+        if(arrayBombs.includes(bomb));
+    }
+
+    return arrayBombs;
+}
 
 
 
