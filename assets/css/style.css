@@ -12,6 +12,7 @@ body{
     max-width: 1440px;
     margin: 30px auto;
     width: 80%;
+    position: relative;
 }
 
 .bg-purple{
@@ -31,7 +32,7 @@ body{
     border: solid 2px white;
     justify-content: center;
     align-items: center;
-    position: relative;
+    
 
     > div {
         width: 90px;
