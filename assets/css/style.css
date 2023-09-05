@@ -54,7 +54,7 @@ body{
 }
 
 /*Main*/
-.cell{
+.grid{
     border: 2px white solid;
     width: calc(100%/10);
     aspect-ratio: 1 / 1;

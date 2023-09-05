@@ -24,11 +24,15 @@ function createBoard(){
     //add random bombs
     const bombArray = Array(bombAmount).fill('bomb');
     const emptyArray = Array(width*width - bombAmount).fill('valid');
-    console.log(bombArray);
+    //console.log(bombArray, emptyArray);
+    const gameArray = emptyArray.concat(bombArray);
+    const shuffledArray = gameArray.sort(() => Math.random() -0.5);
+    console.log(shuffledArray);
 
     for (let i = 1; i <= width*width; i++) {
         const square = document.createElement('div');
         square.setAttribute('id', 1);
+        square.classList.add(shuffledArray[i]);
         grid.append(square);
         squares.push(square)
     }
