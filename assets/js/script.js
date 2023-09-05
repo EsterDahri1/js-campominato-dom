@@ -14,5 +14,25 @@ difficoltà 2 ⇒ 81 caselle, con un numero compreso tra 1 e 81, divise in 9 cas
 difficoltà 3 ⇒ 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
 
+const grid = document.querySelector('.grid');
+let width = 10;
+let bombAmount = 16;
+let squares = [];
 
+//create board
+function createBoard(){
+    //add random bombs
+    const bombArray = Array(bombAmount).fill('bomb');
+    const emptyArray = Array(width*width - bombAmount).fill('valid');
+    console.log(bombArray);
+
+    for (let i = 1; i <= width*width; i++) {
+        const square = document.createElement('div');
+        square.setAttribute('id', 1);
+        grid.append(square);
+        squares.push(square)
+    }
+} 
+
+createBoard()
 
