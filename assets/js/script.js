@@ -14,12 +14,14 @@ difficoltà 2 ⇒ 81 caselle, con un numero compreso tra 1 e 81, divise in 9 cas
 difficoltà 3 ⇒ 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
 const submit = document.querySelector('button');
-const grid = document.querySelector('.grid');
-let width = 10;
-let bombAmount = 16;
-let squares = [];
 
 submit.addEventListener('click', function(){
+
+    const grid = document.querySelector('.grid');
+    let width = 10;
+    let bombAmount = 16;
+    let squares = [];
+
     //create board
     function createBoard() {
         //add random bombs
@@ -38,10 +40,8 @@ submit.addEventListener('click', function(){
             grid.append(square);
             squares.push(square);
 
-
-
-            square.addEventListener('click', function () {
-                //console.log('Type on cell');
+            square.addEventListener('click', function(){
+                //console.log('ho cliccato');
                 this.classList.toggle('bg-purple');
                 console.log(i);
             })
@@ -51,4 +51,6 @@ submit.addEventListener('click', function(){
     }
 
     createBoard()
+
+    
 })
