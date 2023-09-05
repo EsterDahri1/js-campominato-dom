@@ -55,11 +55,17 @@ body{
 
 /*Main*/
 .grid{
-    border: 2px white solid;
-    width: calc(100%/10);
-    aspect-ratio: 1 / 1;
-    color: white;
+    width: 904px;
+    aspect-ratio: 1/1;
     display: flex;
+    flex-wrap: wrap;
+    border: solid 2px white;
     justify-content: center;
     align-items: center;
+
+    > div {
+        width: 90px;
+        aspect-ratio: 1 / 1;
+        border: solid 2px white;
+    }
 }
