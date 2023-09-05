@@ -13,30 +13,42 @@ difficoltà 1 ⇒ 100 caselle, con un numero compreso tra 1 e 100, divise in 10 
 difficoltà 2 ⇒ 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 difficoltà 3 ⇒ 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
-
+const submit = document.querySelector('button');
 const grid = document.querySelector('.grid');
 let width = 10;
 let bombAmount = 16;
 let squares = [];
 
-//create board
-function createBoard(){
-    //add random bombs
-    const bombArray = Array(bombAmount).fill('bomb');
-    const emptyArray = Array(width*width - bombAmount).fill('valid');
-    //console.log(bombArray, emptyArray);
-    const gameArray = emptyArray.concat(bombArray);
-    const shuffledArray = gameArray.sort(() => Math.random() -0.5);
-    console.log(shuffledArray);
+submit.addEventListener('click', function(){
+    //create board
+    function createBoard() {
+        //add random bombs
+        const bombArray = Array(bombAmount).fill('bomb');
+        const emptyArray = Array(width * width - bombAmount).fill('valid');
+        //console.log(bombArray, emptyArray);
+        const gameArray = emptyArray.concat(bombArray);
+        const shuffledArray = gameArray.sort(() => Math.random() - 0.5);
+        console.log(shuffledArray);
 
-    for (let i = 1; i <= width*width; i++) {
-        const square = document.createElement('div');
-        square.setAttribute('id', 1);
-        square.classList.add(shuffledArray[i]);
-        grid.append(square);
-        squares.push(square)
+        for (let i = 1; i <= width * width; i++) {
+            const square = document.createElement('div');
+            square.setAttribute('id', 1);
+            square.classList.add(shuffledArray[i]);
+            square.append(i)
+            grid.append(square);
+            squares.push(square);
+
+
+
+            square.addEventListener('click', function () {
+                //console.log('Type on cell');
+                this.classList.toggle('bg-purple');
+                console.log(i);
+            })
+        }
+
+
     }
-} 
 
-createBoard()
-
+    createBoard()
+})

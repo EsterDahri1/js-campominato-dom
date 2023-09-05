@@ -14,45 +14,6 @@ body{
     width: 80%;
 }
 
-/*Utilities*/
-
-.d-flex{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.d-none{
-    display: none;
-}
-
-.text-center{
-    text-align: center;
-}
-
-.mt-2{
-    margin-top: 2rem;
-}
-
-.ml-2{
-    margin-left: 2rem;
-}
-
-.p-05{
-    padding: 0.5rem;
-}
-
-.bg-purple{
-    background-color: purple;
-}
-
-.block{
-    display: block;
-}
-
-.width-100{
-    width: 100%;
-}
-
 /*Main*/
 .grid{
     width: 904px;
@@ -67,5 +28,9 @@ body{
         width: 90px;
         aspect-ratio: 1 / 1;
         border: solid 2px white;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
