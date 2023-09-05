@@ -40,17 +40,24 @@ submit.addEventListener('click', function(){
             grid.append(square);
             squares.push(square);
 
-            square.addEventListener('click', function(){
+            square.addEventListener('click', function () {
                 //console.log('ho cliccato');
                 this.classList.toggle('bg-purple');
                 console.log(i);
+                if (square.classList.contains('bomb')) {
+                    //console.log('Game over');
+                    square.classList.add('bg-red');
+                    const newMsg = document.createElement('span');
+                    const contentMsg = document.createTextNode("Game over!");
+                    newMsg.appendChild(contentMsg);
+                    const currentDiv = document.querySelector('.container');
+                    document.body.insertBefore(newMsg, currentDiv);
+                } else {
+                    console.log('sum');
+                }
             })
         }
-
-
     }
 
-    createBoard()
-
-    
-})
+    const gameBoard = createBoard()
+});

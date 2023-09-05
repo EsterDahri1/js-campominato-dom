@@ -18,6 +18,10 @@ body{
     background-color: purple;
 }
 
+.bg-red{
+    background-color: red;
+}
+
 /*Main*/
 .grid{
     width: 904px;
@@ -27,6 +31,7 @@ body{
     border: solid 2px white;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     > div {
         width: 90px;
@@ -37,4 +42,13 @@ body{
         justify-content: center;
         align-items: center;
     }
+}
+
+span{
+    border: red solid 2px;
+    background-color: black;
+    color: red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
