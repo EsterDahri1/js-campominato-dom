@@ -15,6 +15,9 @@ difficoltà 3 ⇒ 49 caselle, con un numero compreso tra 1 e 49, divise in 7 cas
 */
 const submit = document.querySelector('button');
 
+//creo delle array vuote per mettere i click 
+let userClicks = [];
+
 submit.addEventListener('click', function(){
 
     const grid = document.querySelector('.grid');
@@ -36,7 +39,7 @@ submit.addEventListener('click', function(){
             const square = document.createElement('div');
             square.setAttribute('id', 1);
             square.classList.add(shuffledArray[i]);
-            square.append(i)
+            square.append(i + 1);
             grid.append(square);
             squares.push(square);
 
@@ -44,6 +47,10 @@ submit.addEventListener('click', function(){
                 //console.log('ho cliccato');
                 this.classList.toggle('bg-purple');
                 console.log(i);
+                if(square.classList.contains('bg-purple')){
+                    userClicks.push(i + 1);
+                };
+
                 if (square.classList.contains('bomb')) {
                     //console.log('Game over');
                     square.classList.add('bg-red');
@@ -52,9 +59,8 @@ submit.addEventListener('click', function(){
                     newMsg.appendChild(contentMsg);
                     const currentDiv = document.querySelector('.container');
                     document.body.insertBefore(newMsg, currentDiv);
-                } else {
-                    console.log('sum');
-                }
+                    grid.innerHTML += `<h1>Hai vinto! Il tuo punteggio è:  $</h1>`
+                };
             })
         }
     }
