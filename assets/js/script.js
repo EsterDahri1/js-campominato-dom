@@ -39,7 +39,7 @@ submit.addEventListener('click', function(){
             const square = document.createElement('div');
             square.setAttribute('id', 1);
             square.classList.add(shuffledArray[i]);
-            square.append(i + 1);
+            square.append(i);
             grid.append(square);
             squares.push(square);
 
@@ -48,8 +48,15 @@ submit.addEventListener('click', function(){
                 this.classList.toggle('bg-purple');
                 console.log(i);
                 if(square.classList.contains('bg-purple')){
-                    userClicks.push(i + 1);
+                    userClicks.push(i);
+                    console.log(userClicks);
                 };
+
+                let total = 0;
+                userClicks.forEach(click => {
+                    total += click
+                })
+                console.log(total);
 
                 if (square.classList.contains('bomb')) {
                     //console.log('Game over');
@@ -59,7 +66,7 @@ submit.addEventListener('click', function(){
                     newMsg.appendChild(contentMsg);
                     const currentDiv = document.querySelector('.container');
                     document.body.insertBefore(newMsg, currentDiv);
-                    grid.innerHTML += `<h1>Hai vinto! Il tuo punteggio è:  $</h1>`
+                    grid.innerHTML += `<h1>Hai vinto! Il tuo punteggio è:  ${total}</h1>`
                 };
             })
         }

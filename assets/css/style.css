@@ -32,6 +32,7 @@ body{
     border: solid 2px white;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     
 
     > div {
@@ -51,5 +52,4 @@ span{
     color: red;
     position: absolute;
     left: 50%;
-    top: 50%;
 }
